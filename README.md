@@ -283,3 +283,17 @@ Route에 exact는 exact={true}와 같은 의미이다.
 그리고 components 대신 render라는 props를 넣어줬다.
 컴포넌트 자체를 전달하는 것이 아니라, 보여주고 싶은 JSX를 넣어 줄 수 있다.
 지금처럼 따로 컴포넌트를 만들기 애매한 상황에 사용해도 되고, 컴포넌트에 props를 별도로 넣어 주고 싶을 때도 사용 할 수 있다.
+
+<br><br>
+
+## 리액트 라우터 부가 기능
+
+### history 
+
+history 객체는 라우트로 사용된 컴포넌트에 match, location과 함께 전달되는 props 중 하나로, 이 객체를 통해 컴포넌트 내에 구현하는 메서드에 라우터 API를 호출할 수 있습니다.
+
+예를들면, 특정 버튼을 눌렀을 때 뒤로 가거나 로그인 후 화면을 전환하거나 다른 페이지로 이탈하는 것을 방지해야 할 때 history를 활용합니다.
+
+### witRouter
+
+이 함수는 HoC(Higher-order Component)입니다. 라우트로 사용된 컴포넌트가 아니어도 match, location, history 객체를 접근할 수 있게 해줍니다.
