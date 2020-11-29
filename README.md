@@ -294,6 +294,24 @@ history 객체는 라우트로 사용된 컴포넌트에 match, location과 함�
 
 예를들면, 특정 버튼을 눌렀을 때 뒤로 가거나 로그인 후 화면을 전환하거나 다른 페이지로 이탈하는 것을 방지해야 할 때 history를 활용합니다.
 
-### witRouter
+```
+    useEffect(()=> {
+        console.log(history);
+        const unBlock = history.block('정말 떠나실 건가요 ?');
+        return() => {
+            unBlock();
+        };
+    }, [history]);
+
+```
+
+이 부분은 componentDidMount와 componentWillUnmount 역할과 같다.
+컴포넌트가 언마운트되면 질문을 멈춘다. (componentWillUnmount)
+
+### withRouter
 
 이 함수는 HoC(Higher-order Component)입니다. 라우트로 사용된 컴포넌트가 아니어도 match, location, history 객체를 접근할 수 있게 해줍니다.
+
+### Switch
+
+이 컴포넌트는 여러 Route를 감싸서 그중 일치하는 단 하나의 라우트만을 렌더링시켜 줍니다. Switch를 사용하면 모든 규칙과 일치하지 않을 때 보여 줄 Not Found 페이지도 구현할 수 있습니다.
