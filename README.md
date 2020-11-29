@@ -268,3 +268,18 @@ const About = ({ location }) => {
 
 서브 라우트는 라우트 내부에 또 라우트를 정의하는 것이다.
 그냥 라우트로 사용되고 있는 컴포넌트의 내부에 Route 컴포넌트를 또 사용하면 된다.
+
+[Profiles.js] 에서
+
+```
+<Route
+  path="/profiles"
+  exact
+  render={() => <div>사용자를 선택해 주세요.</div>}
+/>
+```
+
+Route에 exact는 exact={true}와 같은 의미이다.
+그리고 components 대신 render라는 props를 넣어줬다.
+컴포넌트 자체를 전달하는 것이 아니라, 보여주고 싶은 JSX를 넣어 줄 수 있다.
+지금처럼 따로 컴포넌트를 만들기 애매한 상황에 사용해도 되고, 컴포넌트에 props를 별도로 넣어 주고 싶을 때도 사용 할 수 있다.
