@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import WithRouterSample from './WithRouterSample';
 
 const data = {
   velopert: {
@@ -27,13 +29,18 @@ const Profile = ({ match }) => {
       <p>
         {profile.description}
       </p>
+      <WithRouterSample />
     </div>
   )
 };
 
-export default Profile;
+export default withRouter(Profile);
 
 // const Profile = ({ match }) => {
 //  const {username}=match.params;
 //  const profile = data[username];
 // match라는 객체 안의 params 값을 참조합니다.
+
+
+// profiles말고 profile에다
+// WithRouterSample과 withRouter을 넣어야 match에 params 값이 뜬다.
