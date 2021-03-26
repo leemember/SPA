@@ -6,10 +6,13 @@ import History from "./History";
 import Profiles from "./Profiles";
 import BrowserHistory from "./BrowserHistory";
 import BrowserHistory02 from "./BrowserHistory02";
+import RRdom from "./RRdom";
 
 const App = () => {
   return (
     <div>
+      <RRdom />
+      <hr />
       <BrowserHistory />
       <BrowserHistory02 />
       {/* 네비게이션 부분 */}
